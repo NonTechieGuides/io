@@ -20,7 +20,7 @@ export default function Home() {
           <img className="mx-auto max-w-full" src="https://timer.getmara.com/c3R5bGU9MTImZGF0ZT0yMDIxLTEyLTAxJnRpbWU9MDklM0EwMCZ0aW1lem9uZT1BbWVyaWNhJTJGQ2hpY2FnbyZiY2tDb2xvcj1GRkZGRkYmZm9udENvbG9yPTAwMDAwMCZsYWJlbENvbG9yPTQ0NDQ0NCZkYXlMYWJlbD1kYXlzJmhvdXJMYWJlbD1ob3VycyZtaW5MYWJlbD1taW4mc2VjTGFiZWw9c2Vj.gif" />
         </div>
 
-        <p className="text-white">SignupForm title="Leave your email, below, to be notified with the alpha version of this book is available."</p>
+        <p className="text-white">SignupForm title=Leave your email, below, to be notified with the alpha version of this book is available.</p>
       </main>
 
     </Layout>

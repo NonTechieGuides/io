@@ -16,7 +16,7 @@ const Hero = () => {
           src="/assets/JAMSTACK-cover.png" />
       </div>
       <div className="px-4 py-8 md:px-8 self-center md:w-2/3">
-        <h2 className="font-bold text-2xl mb-3 text-blue-700">What you&aposll learn &hellip;</h2>
+        <h2 className="font-bold text-2xl mb-3 text-blue-700">What you&apos;ll learn &hellip;</h2>
         {outcomes && (
           <ul className="mb-6">
             {outcomes.map((i) => (

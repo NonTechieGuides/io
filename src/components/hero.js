@@ -8,7 +8,7 @@ const outcomes = [
 
 const Hero = () => {
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="hidden flex flex-col md:flex-row">
       <div className="bg-grey-100 text-center md:w-1/3 filter drop-shadow-x self-center">
         <img
           className="mx-auto p-4"
@@ -29,11 +29,6 @@ const Hero = () => {
             ))}
           </ul>
         )}
-
-        <div className="drop-shadow-xl filter px-4 pb-4">
-          <h2 className="text-lg text-center">LAUNCHING IN &hellip;</h2>
-          <img className="w-60 mx-auto md:w-full mt-2" src="https://timer.getmara.com/c3R5bGU9MTImZGF0ZT0yMDIxLTEyLTAxJnRpbWU9MDklM0EwMCZ0aW1lem9uZT1BbWVyaWNhJTJGQ2hpY2FnbyZiY2tDb2xvcj1GRkZGRkYmZm9udENvbG9yPTAwMDAwMCZsYWJlbENvbG9yPTQ0NDQ0NCZkYXlMYWJlbD1kYXlzJmhvdXJMYWJlbD1ob3VycyZtaW5MYWJlbD1taW4mc2VjTGFiZWw9c2Vj.gif" />
-        </div>
 
       </div>
     </div>

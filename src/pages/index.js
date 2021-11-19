@@ -19,7 +19,7 @@ export default function Home() {
             alt="Non-Techie Guides"
             src="/assets/jamstackG.png"
           />
-          <p className="mx-auto mb-8 text-center text-cyan italic">the non-techie's <span className="text-darkYellow italic">a-to-z guide</span> to the Jamstack &amp; modern web</p>
+          <p className="mx-auto mb-8 text-center text-cyan italic">the non-techie&apos;s <span className="text-darkYellow italic">a-to-z guide</span> to the Jamstack &amp; modern web</p>
           <Countdown />
           </div>  
         <Social />

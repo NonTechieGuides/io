@@ -1,4 +1,24 @@
 @tailwind base;
+
+@layer base {
+  body {
+    @apply bg-codewall;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono text-white;
+  }
+  h1 {
+    @apply text-darkYellow;
+  }
+  p {
+    @apply text-white font-mono;
+  }
+  a {
+    @apply text-blue;
+  }
+}
+
+
 /* purgecss start ignore */
 @tailwind components;
 @tailwind utilities;

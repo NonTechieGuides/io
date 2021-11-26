@@ -21,13 +21,14 @@ export default function Colophon() {
 
         <p>This is a paragraph. <span className="font-bold">This is in bold</span>. <span className="italic">This is in italics</span>. <span className="font-bold italic">This is in bold italic</span>. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate reiciendis nemo voluptates sequi ex natus eveniet aperiam fuga dolore tempore, laudantium ab ipsam enim vero ad, perferendis, et illo. Assumenda?</p>
 
-        <p className="bg-base2 text-base03">This paragraph is in reverse or opposite color mode. When the main site is in normal (light mode), this will appear as if in the dark mode. When the main site is in dark mode, this will appear as if in light mode.</p>
+        <p className="bg-base2 text-base03/">This paragraph is in reverse or opposite color mode. When the main site is in normal (light mode), this will appear as if in the dark mode. When the main site is in dark mode, this will appear as if in light mode.</p>
 
         <p>This paragraph has <span className="bg-yellow text-base03">highlighted text.</span></p>
 
         <p className="bg-base2 text-base03">This paragraph has <span className="bg-yellow">highlighted text, but in dark mode.</span></p>
 
-        <p>This paragraph contains a <a href="#">link</a> tag &hellip; otherwise known as an 'a href' tag.</p>
+        <p>This paragraph contains a <a href="#">link</a> tag &hellip; otherwise known as an &#8216;a href&#8217;
+ tag.</p>
 
         <ul>
           <p>This is an unordered list. Bullets are customized per list.</p>

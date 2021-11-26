@@ -1,22 +1,27 @@
 module.exports = {
   purge: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
+  mode: 'jit',
   theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      black: '#282c34',
-      white: '#abb2bf',
-      lightRed: '#e06c75',
-      darkRed: '#b35046',
-      green: '#98c379',
-      lightYellow: '#e5c07b',
-      darkYellow: '#d19a66',
-      blue: '#61afef',
-      magenta: '#c678dd',
-      cyan: '#56b6c2',
-      gutterGrey: '#4b5263',
-      commentGrey: '#5c6370',
+      base03: '#002b26',
+      base02: '#073642',
+      base01: '#586e75',
+      base00: '#657b83',
+      base0: '#839496',
+      base1: '#93a1a1',
+      base2: '#eee8d5',
+      base3: '#fdf6e3',
+      yellow: '#b58900',
+      orange: '#cb4b16',
+      red: '#dc322f',
+      magenta: '#d33682',
+      violet: '#6c71c4',
+      blue: '#268bd2',
+      cyan: '#2aa198',
+      green: '#859900',
     },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
@@ -25,7 +30,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'codewall': "url('/assets/Code_image_faded.jpg')",
+        'codewall': "url('/assets/x.png')",
        }
     },
   },
@@ -33,6 +38,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/typography')
+    require('@tailwindcss/typography'),
+    require('nightwind')
   ],
 }

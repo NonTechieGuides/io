@@ -1,4 +1,5 @@
 import Toggle from '../components/toggle'
+import Link from 'next/link'
 
 const Nav = () => {
   return (
@@ -9,7 +10,7 @@ const Nav = () => {
           src="/assets/color-code-logo_simple.png"
         />
         <h1 className="">
-          <a href="/" className="no-underline text-yellow">Non-Techie&nbsp;Guides</a>
+          <Link href="/"><span className="no-underline text-yellow cursor-pointer">Non-Techie&nbsp;Guides</span></Link>
         </h1>
         <p className="mx-auto mt-0 text-center text-cyan italic">git yur nErd on!</p>
 

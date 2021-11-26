@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from '../components/layout'
+import Link from 'next/link'
 import Countdown from '../components/countdown'
 import Social from '../components/social'
 
@@ -27,7 +28,7 @@ export default function Colophon() {
 
         <p className="bg-base2 text-base03">This paragraph has <span className="bg-yellow">highlighted text, but in dark mode.</span></p>
 
-        <p>This paragraph contains a <a href="#">link</a> tag &hellip; otherwise known as an &#8216;a href&#8217;
+        <p>This paragraph contains a <Link href="#">link</Link> tag &hellip; otherwise known as an &#8216;a href&#8217;
  tag.</p>
 
         <ul>

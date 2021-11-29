@@ -15,7 +15,9 @@ const Nav = () => {
         <p className="mx-auto mt-0 text-center text-cyan italic">git yur nErd on!</p>
 
         {/* add Toggle component here, if needed */}
-        <Toggle />
+        <Toggle />{' '}
+
+        <Link href="/blog/">Blog</Link>
 
       </nav>
   )

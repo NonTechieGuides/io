@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Layout from '../components/layout'
 import Countdown from '../components/countdown'
 import Social from '../components/social'
+import PaperformEmbed from '../components/paperform'
+
 
 export default function Home() {
   return (
@@ -11,7 +13,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col justify-center">
+      <main>
+        <div data-paperform-id="1uzuqayh" data-takeover="1" />
+      </main>
+
+
+      {/* <main className="flex flex-col justify-center">
         <p className="mx-auto mt-0 text-center text-xl font-bold">Guides, blogs, tutorials, &amp; a complete a-to-z guide book to help <em>you</em> build a faster, more secure, and Google-compliant website &hellip; in less time and lower cost!</p>
         <div className="mt-12 p-4 border-4 border-blue border-dotted bg-base2 text-base02 dark:bg-base03 dark:text-base3">
           <img
@@ -23,7 +30,7 @@ export default function Home() {
           <Countdown />
           </div>  
         <Social />
-      </main>
+      </main> */}
 
     </Layout>
   )

@@ -17,8 +17,6 @@ const Nav = () => {
         {/* add Toggle component here, if needed */}
         <Toggle />{' '}
 
-        <Link href="/blog/">Blog</Link>
-
       </nav>
   )
 }

@@ -14,7 +14,7 @@ const Hero = () => {
         <Image
           className="mx-auto p-4"
           alt="Non-Techie Guide to the JamStack"
-          src="/assets/JAMSTACK-cover.png" />
+          src="/assets/JAMSTACK-cover.png"
           layout="fill"
         />
       </div>

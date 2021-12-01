@@ -21,6 +21,7 @@ export default function Home() {
 
         <Script
           className="mt-12"
+          id="Paperform"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `

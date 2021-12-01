@@ -15,7 +15,7 @@ const Nav = () => {
           />
         </div>
         <h1 className="">
-          <Link href="/"><span className="no-underline text-yellow cursor-pointer">Non-Techie&nbsp;Guides</span></Link>
+          <Link href="/" passHref><span className="no-underline text-yellow cursor-pointer">Non-Techie&nbsp;Guides</span></Link>
         </h1>
         <p className="mx-auto mt-0 text-center text-cyan italic">git yur nErd on!</p>
 

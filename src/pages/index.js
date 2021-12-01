@@ -2,8 +2,7 @@ import Head from 'next/head'
 import Layout from '../components/layout'
 import Countdown from '../components/countdown'
 import Social from '../components/social'
-import PaperformEmbed from '../components/paperform'
-
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -14,7 +13,18 @@ export default function Home() {
       </Head>
 
       <main>
-        <div data-paperform-id="1uzuqayh" data-takeover="1" />
+
+        <Script
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function() {var script = document.createElement('script'); script.src = "https://paperform.co/__embed.min.js"; document.body.appendChild(script); })() 
+            `
+          }}
+        />
+
+        <div data-paperform-id="1uzuqayh" id="Paperform1"></div>
+
       </main>
 
 

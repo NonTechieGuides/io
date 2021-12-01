@@ -14,8 +14,8 @@ export default function Home() {
 
       <main>
         <div className="mb-12">
-          <h2 className="w-3/4 mb-8 text-lg italic">I'm putting the finishing touches on the quiz &hellip;</h2>
-          <h1 className="w-3/4 mb-8 border-b-2 border-violet">But in the meantime,  can I ask you a favor?</h1>
+          <h2 className="w-3/4 mb-8 text-base2 text-lg italic">I&apos;m putting the finishing touches on the quiz &hellip;</h2>
+          <h1 className="w-3/4 pb-8 mb-8 text-base2 border-b-2 border-violet">But in the meantime,  can I ask you a favor?</h1>
           <p>Help me make sure that my report on the <em>3 biggest ways your website could be sabotaging your business</em> actually addresses YOUR concerns.</p>
         </div>
 

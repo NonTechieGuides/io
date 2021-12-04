@@ -5,16 +5,25 @@ import Logo from '../../public/assets/color-code-logo_simple.png'
 
 const Nav = () => {
   return (
-    <nav className="mx-auto mb-8 md:mb-16 pb-2 border-b-2 border-magenta">
-        <div className="mx-auto text-center w-14"><Toggle /></div>
-        <h1 className="">
-          <Link href="/" passHref><span className="no-underline text-yellow cursor-pointer">Non-Techie&nbsp;Guides</span></Link>
-        </h1>
-        <p className="mx-auto mt-0 text-center text-cyan italic">git yur nErd on!</p>
-
-        {/* add Toggle component here, if needed */}
-
-      </nav>
+    <nav className="md:container md:mx-auto p-4 text-center font-bold text-xl text-magenta">
+      <div>
+        <Link href="/">
+          <a>Home</a>
+        </Link>{" "}
+        <Link href="/about">
+          <a>About</a>
+        </Link>{" "}
+        <Link href="/blog">
+          <a>Blog</a>
+        </Link>{" "}
+        <Link href="/book">
+          <a>Buy the Book</a>
+        </Link>{" "}
+        <Link href="/contact">
+          <a>Contact</a>
+        </Link>{" "}
+      </div>
+    </nav>
   )
 }
 

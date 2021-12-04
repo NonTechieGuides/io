@@ -34,7 +34,7 @@
     @apply  font-mono mb-2;
   }
   a {
-    @apply text-cyan font-semibold underline;
+    @apply text-cyan font-semibold;
   }
   ul {
     @apply mb-8 font-mono list-inside;

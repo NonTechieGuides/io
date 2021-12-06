@@ -1,4 +1,4 @@
-import { sanityClient, urlFor, usePreviewSubscription, PortableText } from '../../../../lib/sanity'
+import { sanityClient, urlFor, usePreviewSubscription, PortableText } from '../../../lib/sanity'
 import groq from 'groq';
 
 const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{

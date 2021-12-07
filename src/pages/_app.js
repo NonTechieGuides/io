@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import '../styles/tailwind.css'
 import { ThemeProvider } from 'next-themes'
 import Header from '../components/header'
@@ -12,10 +11,15 @@ function MyApp({ Component, pageProps }) {
         storageKey='nightwind-mode'
         defaultTheme='dark'
       > */}
-      <Header />
+      <div className="flex flex-col min-h-screen overflow-hidden container mx-auto">
+
+        <Header />
+        <main  className="flex-grow">
         <Component {...pageProps} />
-      {/* </ThemeProvider> */}
-      <Footer />
+        {/* </ThemeProvider> */}
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }

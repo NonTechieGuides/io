@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-// import Transition from '../utils/Transition.js';
-
+import React, { useState, useRef, useEffect } from 'react'
+import Transition from '../utils/Transition'
 import Link from 'next/link'
 
 const Header = () => {
@@ -67,7 +66,7 @@ const Header = () => {
                   <Link href="/blog"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out">Blog</a></Link>
                 </li>
                 <li>
-                  <Link href="/"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out">Get the Book</a></Link>
+                  <Link href="/faq"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out">FAQ</a></Link>
                 </li>
                 <li>
                   <Link href="/"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out">Contact</a></Link>
@@ -77,7 +76,7 @@ const Header = () => {
               {/* Desktop sign in links */}
               <div className="flex flex-grow justify-end flex-wrap items-center">
                 <Link href="/signup">
-                  <a className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3 p-2">QUIZ: What's killing your site?</a>
+                  <a className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3 py-2 px-4 rounded-lg uppercase font-bold">Get the Book</a>
                 </Link>
               </div>
             </nav>
@@ -103,11 +102,11 @@ const Header = () => {
 
               {/*Mobile navigation */}
               <div ref={mobileNav}>
-                {/* <Transition
+                <Transition
                   show={mobileNavOpen}
                   tag="nav"
                   id="mobile-nav"
-                  className="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white"
+                  className="absolute top h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white text-3xl"
                   enter="transition ease-out duration-200 transform"
                   enterStart="opacity-0 -translate-y-2"
                   enterEnd="opacity-100 translate-y-0"
@@ -115,30 +114,30 @@ const Header = () => {
                   leaveStart="opacity-100"
                   leaveEnd="opacity-0"
                 >
-                  <ul className="px-5 py-2">
+                  <ul className="ml-8 px-5 py-2">
                     <li>
-                      <Link href="/pricing"><a className="flex text-gray-600 hover:text-gray-900 py-2">Pricing</a></Link>
+                      <Link href="/"><a className="flex text-gray-600 hover:text-gray-900 my-4 py-2">Home</a></Link>
                     </li>
                     <li>
-                      <Link href="/about"><a className="flex text-gray-600 hover:text-gray-900 py-2">About us</a></Link>
+                      <Link href="/about"><a className="flex text-gray-600 hover:text-gray-900 my-4 py-2">About</a></Link>
                     </li>
                     <li>
-                      <Link href="/tutorials"><a className="flex text-gray-600 hover:text-gray-900 py-2">Tutorials</a></Link>
+                      <Link href="/blog"><a className="flex text-gray-600 hover:text-gray-900 my-4 py-2">Blog</a></Link>
                     </li>
                     <li>
-                      <Link href="/blog"><a className="flex text-gray-600 hover:text-gray-900 py-2">Blog</a></Link>
+                      <Link href="/faq"><a className="flex text-gray-600 hover:text-gray-900 my-4 py-2">FAQ</a></Link>
                     </li>
                     <li>
-                      <Link href="/blog"><a className="flex text-gray-600 hover:text-gray-900 py-2">Contact</a></Link>
+                      <Link href="/contact"><a className="flex text-gray-600 hover:text-gray-900 mt-4 mb-8 py-2">Contact</a></Link>
                     </li>
                     
                     <li>
-                      <Link href="/signup"><a className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
-                        QUIZ: What's killing your site?</a>
+                      <Link href="/get-the-book"><a className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full py-2 px-4 rounded-md uppercase">
+                        Get the Book</a>
                       </Link>
                     </li>
                   </ul>
-                </Transition> */}
+                </Transition>
               </div>
 
             </div>          </div>

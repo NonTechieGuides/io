@@ -1,14 +1,17 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from 'next/image'
-import { sanityClient, urlFor } from "../../../lib/sanity";
+import { sanityClient, urlFor, PortableText } from "../../../lib/sanity";
 
 const postsQuery = `*[_type == "post"]{
   _id,
   title,
   slug,
+  body,
   mainImage,
-  categories,
+  "author": author->name,
+  "authorImage": author->image,
+  "category": categories[0]->title,
 }`;
 
 export default function Home({ posts }) {
@@ -58,7 +61,7 @@ export default function Home({ posts }) {
               {/* article loop */}
               <ul className="grid gap-12 md:grid-cols-3 md:gap-x-6 md:gap-y-8 items-start">
                 {posts?.length > 0 && posts.map((post) => (
-                  <li key={post._id} className="flex flex-col h-full" data-aos="zoom-y-out">
+                  <li key={post._id} className="flex flex-col h-full"> {/* data-aos="zoom-y-out" */}
                     <article>
                       <header>
                         <Link href={`/blog/${post.slug.current}`} passHref className="block mb-6">
@@ -79,11 +82,12 @@ export default function Home({ posts }) {
                           <ul className="flex flex-wrap text-xs font-medium -m-1">
                             {/* category */}
                             <li className="m-1">
-                              <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">BASICS</a>
+                              {/* NOTE: figure out how to show all categories, if more than 1; change the [0], above, to [] */}
+                              <span className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out uppercase">{post.category}</span>{' '}
                             </li>
                             {/* level */}
                             <li className="m-1">
-                              <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">LEVEL 1</a>
+                              <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#">LEVEL 1</a>
                             </li>
                             {/* estimated time to read calculation */}
                             <li className="m-1">
@@ -97,14 +101,14 @@ export default function Home({ posts }) {
                         </h3>
                       </header>
                       {/* blog blurb */}
-                      <p className="text-gray-600 flex-grow">{post.blurb}</p>
+                      <p className="text-gray-600 flex-grow"><PortableText blocks={post?.body[0]}/></p>
                       <footer className="text-sm flex items-center mt-4">
                         <div className="flex flex-shrink-0 mr-3">
                           <a className="relative" href="#0">
                             <span className="absolute inset-0 -m-px" aria-hidden="true"><span className="absolute inset-0 -m-px bg-white rounded-full"></span></span>
                             <Image
-                              src="/assets/images/news-author-01.jpg"
-                              alt="Author 01"
+                              src={urlFor(post.authorImage).url()}
+                              alt="{post.author}"
                               width={32}
                               height={32}
                               className="relative rounded-full"
@@ -116,7 +120,7 @@ export default function Home({ posts }) {
                         </div>
                         <div>
                           <span className="text-gray-600">By </span>
-                          <a className="font-medium hover:underline" href="#0">author.name</a>
+                          <span className="font-medium hover:underline">{post.author}</span>
                         </div>
                       </footer>
                     </article>

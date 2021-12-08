@@ -27,10 +27,10 @@ const HeroHome = () => {
 
           {/* Section header */}
           <div className="text-center pb-12 md:pb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Is your current website <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-400">killing</span> your business?</h1>
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" >Is your current website <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-400">killing</span> your business?</h1>
             <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Take the short quiz and learn which <em>business killer</em> is lurking on your site &hellip;</p>
-              <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
+              <p className="text-xl text-gray-600 mb-8" >Take the short quiz and learn which <em>business killer</em> is lurking on your site &hellip;</p>
+              <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
                 <div>
                   <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 p-2 sm:w-auto sm:mb-0" href="#0">Take FREE Quiz</a>
                 </div>
@@ -43,7 +43,7 @@ const HeroHome = () => {
 
           {/* Hero image */}
           <div>
-            <div className="relative flex justify-center mb-8" data-aos="zoom-y-out" data-aos-delay="450">
+            <div className="relative flex justify-center mb-8">
               <div className="flex flex-col justify-center">
                 <img className="mx-auto" src={require('../../public/assets/images/hero-image-01.png').default} width="768" height="432" alt="Hero" />
                 <svg className="absolute inset-0 max-w-full mx-auto md:max-w-none h-auto" width="768" height="432" viewBox="0 0 768 432" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">

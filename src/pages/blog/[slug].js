@@ -7,11 +7,14 @@ import Date from '../../components/date'
 const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   _id,
   title,
+  subtitle,
   slug,
   mainImage,
   "date": publishedAt,
   "author": author->name,
   body,
+  "category": categories[0]->title,
+  "tag": tags[0]->title,
 }`
 
 export default function SinglePost({ data }) {
@@ -44,7 +47,7 @@ export default function SinglePost({ data }) {
                 {/* Title and excerpt */}
                 <div className="text-center md:text-left">
                   <h1 className="h1 font-red-hat-display mb-4" >{post.title}</h1>
-                  <p className="text-xl text-gray-600 dark:text-gray-400"><PortableText blocks={post?.body[0]} /></p>
+                  <h2 className="h3 italic text-gray-500">{post.subtitle}</h2>
                 </div>
                 {/* Article meta */}
                 <div className="md:flex md:items-center md:justify-between mt-5">
@@ -53,19 +56,40 @@ export default function SinglePost({ data }) {
                     <a href="#0">
                       {/* <img className="rounded-full flex-shrink-0 mr-3" src={require('../images/news-author-01.jpg').default} width="32" height="32" alt="Author 04" /> */}
                     </a>
+                    {/* author & date */}
                     <div>
                       <span className="text-gray-600 dark:text-gray-400">By </span>
                       <a className="font-medium text-gray-800 dark:text-gray-300 hover:underline" href="#0">{post.author}</a>
                       <span className="text-gray-600 dark:text-gray-400"> · <Date dateString={post.date} /></span>
                     </div>
                   </div>
+                  {/* categories & tags */}
+                  <div>
+                    <ul className="flex flex-wrap text-xs font-medium m-1 justify-center md:j">
+                      {/* category */}
+                      <li className="m-1">
+                        {/* NOTE: figure out how to show all categories, if more than 1; change the [0], above, to [] */}
+                        <span className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out uppercase cursor-pointer">{post.category}</span>{' '}
+                      </li>
+                      {/* tag */}
+                      <li className="m-1">
+                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out cursor-pointer" href="#">
+                          {post.tag}
+                        </span>
+                      </li>
+                      {/* estimated time to read calculation */}
+                      <li className="m-1">
+                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm cursor-pointer">4 min read</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </header>
-              <hr className="w-5 h-px pt-px bg-gray-400 dark:bg-gray-500 border-0 mb-8"  />
+              <hr className="w-11/12 h-px mx-auto pt-px bg-gray-400 dark:bg-gray-500 border-0 mb-8" />
 
               {/* Article content */}
               <div className="text-lg text-gray-600 dark:text-gray-400" >
-                <p className="mb-8">
+                <p className="mb-8 mt-24">
                   <PortableText blocks={post?.body} />
                 </p>
               </div>

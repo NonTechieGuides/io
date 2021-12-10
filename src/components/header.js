@@ -47,7 +47,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
 
             {/* site branding */}
-            <div className="flex-shrink-0 mr-4">
+            <div className="flex-shrink-0 mr-4 focus:outline-none">
               <Link href="/" className="block" aria-label="Non-Techie Guides">
                 <a>NTG LOGO</a>
               </Link>
@@ -57,26 +57,26 @@ const Header = () => {
             <nav className="hidden md:flex md:flex-row md:flex-grow">
               <ul className="flex flex-grow justify-end flex-wrap items-center">
                 <li>
-                  <Link href="/"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out">Home</a></Link>
+                  <Link href="/"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Home</a></Link>
                 </li>
                 <li>
-                  <Link href="/"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out">About</a></Link>
+                  <Link href="/"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">About</a></Link>
                 </li>
                 <li>
-                  <Link href="/blog"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out">Blog</a></Link>
+                  <Link href="/blog"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Blog</a></Link>
                 </li>
                 <li>
-                  <Link href="/faq"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out">FAQ</a></Link>
+                  <Link href="/faq"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">FAQ</a></Link>
                 </li>
                 <li>
-                  <Link href="/"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out">Contact</a></Link>
+                  <Link href="/"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Contact</a></Link>
                 </li>
               </ul>
 
               {/* Desktop sign in links */}
               <div className="flex flex-grow justify-end flex-wrap items-center">
                 <Link href="/signup">
-                  <a className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3 py-2 px-4 rounded-lg uppercase font-bold">Get the Book</a>
+                  <a className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3 py-2 px-4 rounded-lg uppercase font-bold focus:outline-none">Get the Book</a>
                 </Link>
               </div>
             </nav>

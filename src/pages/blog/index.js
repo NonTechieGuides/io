@@ -12,9 +12,16 @@ const postsQuery = `*[_type == "post"]{
   "author": author->name,
   "authorImage": author->image,
   "category": categories[0]->title,
+  "tag": tags[0]->title,
 }`;
 
-export default function Home({ posts }) {
+const catsQuery = `*[_type == "category"]{
+  _id,
+  title,
+  description,
+}`;
+
+export default function Home({ posts, cats }) {
   return (
     <>
       <Head>
@@ -33,24 +40,17 @@ export default function Home({ posts }) {
               <h2 className="text-xl font-semibold italic text-gray-400">everything you need to know to build fast, compliant, secure websites using the JamStack!</h2>
             </div>
 
-            {/* Section tags ... utilizing CATEGORIES */}
+            {/* Section tags ... utilizing CATEGORIES; HOW TO SORT BY CATEGORY WHEN CLICKED???? */}
             <div className="border-b border-gray-300 pb-4 mb-12">
               <ul className="flex flex-wrap justify-center md:justify-start font-medium -mx-5 -my-1">
                 <li className="mx-5 my-1">
-                  <a className="text-blue-600" href="#0">All</a>
+                  <a className="text-blue-600 hover:text-gray-100 py-1 px-3 rounded-full hover:bg-blue-600 transition duration-150 ease-in-out focus:outline-none cursor-pointer" href="#0">All</a>
                 </li>
-                <li className="mx-5 my-1">
-                  <a className="text-gray-800 hover:underline" href="#0">Tutorials</a>
-                </li>
-                <li className="mx-5 my-1">
-                  <a className="text-gray-800 hover:underline" href="#0">Tips & Tricks</a>
-                </li>
-                <li className="mx-5 my-1">
-                  <a className="text-gray-800 hover:underline" href="#0">Free ebooks</a>
-                </li>
-                <li className="mx-5 my-1">
-                  <a className="text-gray-800 hover:underline" href="#0">Guides</a>
-                </li>
+                {cats?.length > 0 && cats.map((category) => (
+                  <li key={category._id} className="mx-5 my-1">
+                    <a className="text-gray-800 hover:text-gray-100 py-1 px-3 rounded-full hover:bg-blue-600 transition duration-150 ease-in-out focus:outline-none cursor-pointer" href="#0">{category.title}</a>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -73,7 +73,7 @@ export default function Home({ posts }) {
                               alt="{post.title}"
                               width={352}
                               height={198}
-                              className="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out"
+                              className="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out cursor-pointer"
                             />
                           </figure>
                         </Link>
@@ -83,15 +83,17 @@ export default function Home({ posts }) {
                             {/* category */}
                             <li className="m-1">
                               {/* NOTE: figure out how to show all categories, if more than 1; change the [0], above, to [] */}
-                              <span className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out uppercase">{post.category}</span>{' '}
+                              <span className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out uppercase cursor-pointer">{post.category}</span>{' '}
                             </li>
-                            {/* level */}
+                            {/* tag */}
                             <li className="m-1">
-                              <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#">LEVEL 1</a>
+                              <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out cursor-pointer" href="#">
+                                {post.tag}
+                              </span>
                             </li>
                             {/* estimated time to read calculation */}
                             <li className="m-1">
-                              <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">4 min read</span>
+                              <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm cursor-pointer">4 min read</span>
                             </li>
                           </ul>
                         </div>
@@ -101,7 +103,7 @@ export default function Home({ posts }) {
                         </h3>
                       </header>
                       {/* blog blurb */}
-                      <p className="text-gray-600 flex-grow"><PortableText blocks={post?.body[0]}/></p>
+                      <p className="text-gray-600 flex-grow"><PortableText blocks={post?.body[0]} /></p>
                       <footer className="text-sm flex items-center mt-4">
                         <div className="flex flex-shrink-0 mr-3">
                           <a className="relative" href="#0">
@@ -141,5 +143,12 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const posts = await sanityClient.fetch(postsQuery);
-  return { props: { posts } };
+  const cats = await sanityClient.fetch(catsQuery);
+
+  return {
+    props: {
+      posts,
+      cats,
+    }
+  }
 }

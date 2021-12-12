@@ -7,18 +7,17 @@ const postsQuery = `*[_type == "post"]{
   _id,
   title,
   slug,
-  body,
   mainImage,
   "author": author->name,
   "authorImage": author->image,
   "category": categories[0]->title,
   "tag": tags[0]->title,
+  excerpt,
 }`;
 
 const catsQuery = `*[_type == "category"]{
   _id,
   title,
-  description,
 }`;
 
 export default function Home({ posts, cats }) {
@@ -102,9 +101,7 @@ export default function Home({ posts, cats }) {
                           <Link href={`/blog/${post.slug.current}`} className="hover:underline">{post.title}</Link>
                         </h3>
                       </header>
-                      {/* blog blurb */}
-                      <p className="text-gray-600 flex-grow"><PortableText blocks={post?.body[0]} /></p>
-                      <footer className="text-sm flex items-center mt-4">
+                      <main className="text-sm flex items-center mt-4">
                         <div className="flex flex-shrink-0 mr-3">
                           <a className="relative" href="#0">
                             <span className="absolute inset-0 -m-px" aria-hidden="true"><span className="absolute inset-0 -m-px bg-white rounded-full"></span></span>
@@ -124,6 +121,11 @@ export default function Home({ posts, cats }) {
                           <span className="text-gray-600">By </span>
                           <span className="font-medium hover:underline">{post.author}</span>
                         </div>
+                      </main>
+                      <footer>
+                        {/* blog excerpt */}
+                        <p className="text-gray-600 flex-grow text-justify md:text-left md:w-4/5 mt-3">{post.excerpt}</p>
+
                       </footer>
                     </article>
                   </li>

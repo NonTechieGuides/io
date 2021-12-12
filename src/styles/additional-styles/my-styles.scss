@@ -1,0 +1,12 @@
+// my custom styles
+
+.article-content {
+}
+
+blockquote {
+  @apply text-xl text-gray-400 mx-6 md:-ml-12 my-12 p-4 uppercase italic border-l-4 border-gray-400 bg-gradient-to-r from-gray-200 to-white;
+}
+
+ol {
+  @apply list-decimal;
+}

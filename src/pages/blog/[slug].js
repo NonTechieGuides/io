@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Date from '../../components/date'
 
-const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
+const postQuery = `*[_type == "post" && slug.current == $slug][0]{
   _id,
   title,
   subtitle,
@@ -15,10 +15,12 @@ const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   body,
   "category": categories[0]->title,
   "tag": tags[0]->title,
+  excerpt,
 }`
 
 export default function SinglePost({ data }) {
-  const { post } = data;
+  
+  const {post} = data;
 
   return (
     <section className="relative">
@@ -84,11 +86,14 @@ export default function SinglePost({ data }) {
                     </ul>
                   </div>
                 </div>
+                <div className="mt-16">
+                    <p className="text-lg">{post.excerpt}</p>
+                  </div>
               </header>
               <hr className="w-11/12 h-px mx-auto pt-px bg-gray-400 dark:bg-gray-500 border-0 mb-8" />
 
               {/* Article content */}
-              <div className="text-lg text-gray-600 dark:text-gray-400" >
+              <div className="article-content text-lg text-gray-600 dark:text-gray-400" >
                 <p className="mb-8 mt-24">
                   <PortableText blocks={post?.body} />
                 </p>
@@ -134,7 +139,7 @@ export async function getStaticPaths() {
   );
   return {
     paths,
-    fallback: true
+    fallback: false
   }
 }
 

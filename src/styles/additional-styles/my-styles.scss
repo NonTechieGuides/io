@@ -17,6 +17,6 @@
   }
 
   ol {
-    @apply list-decimal;
+    @apply list-decimal list-outside ml-8 md:ml-0;
   }
 }

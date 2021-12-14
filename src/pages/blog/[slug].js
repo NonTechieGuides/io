@@ -58,7 +58,7 @@ export default function SinglePost({ data }) {
               <div className="lg:flex lg:justify-between" data-sticky-container>
 
                 {/* Sidebar */}
-                {/* <aside className="relative hidden lg:block w-64 mr-20 flex-shrink-0">
+                <aside className="relative hidden lg:block w-64 mr-20 flex-shrink-0">
                   <div data-sticky data-margin-top="100" data-sticky-for="768" data-sticky-wrap>
                     <h4 className="text-lg font-bold leading-snug tracking-tight my-4">Table of contents</h4>
                     <ul className="font-medium -my-1">
@@ -67,7 +67,8 @@ export default function SinglePost({ data }) {
                           <svg className="w-4 h-4 fill-current text-gray-400 mr-3 flex-shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
                           </svg>
-                          <span><PortableText blocks={post?.body} /></span>
+                          <span>Introduction</span>
+                          {/* <span><PortableText blocks={post?.body} /></span> */}
                         </a>
                       </li>
                       <li className="py-1">
@@ -96,7 +97,7 @@ export default function SinglePost({ data }) {
                       </li>
                     </ul>
                   </div>
-                </aside> */}
+                </aside>
 
                 {/* Main content */}
                 <div>

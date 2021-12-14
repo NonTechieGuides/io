@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-        <div className="flex flex-col min-h-screen overflow-hidden container mx-auto">
+        <div className="flex flex-col min-h-screen overflow-hidden mx-auto">
           <Header />
           <main className="flex-grow">
             <Component {...pageProps} />

@@ -35,7 +35,7 @@ export default function Home({ posts, cats }) {
 
             {/* Page header */}
             <div className="max-w-4xl pb-12 md:pb-20 text-center md:text-left">
-              <h1 className="text-4xl font-bold uppercase">Tips &amp; tutorials for non-techies:</h1>
+              <h1 className="text-4xl font-bold uppercase text-blue-200 dark:text-red-500">Tips &amp; tutorials for non-techies:</h1>
               <h2 className="text-xl font-semibold italic text-gray-400">everything you need to know to build fast, compliant, secure websites using the JamStack!</h2>
             </div>
 

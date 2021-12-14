@@ -19,106 +19,103 @@ const postQuery = `*[_type == "post" && slug.current == $slug][0]{
 }`
 
 export default function SinglePost({ data }) {
-  
-  const {post} = data;
+
+  const { post } = data;
 
   return (
-    <section className="relative">
-
-      {/* Background image */}
-      <div className="absolute inset-0 w-full h-full object-cover opacity-40 md:opacity-20">
-        <Image
-          src={urlFor(post.mainImage).url()}
-          alt="{post.title}"
-          layout="responsive"
-          width={1440}
-          height={577}
-          className="object-cover h-full w-full"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900" aria-hidden="true"></div>
-      </div>
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+    <section>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto lg:max-w-none">
 
             <article>
 
               {/* Article header */}
-              <header className="mb-8">
-                {/* Title and excerpt */}
-                <div className="text-center md:text-left">
-                  <h1 className="h1 font-red-hat-display mb-4" >{post.title}</h1>
-                  <h2 className="h3 italic text-gray-500">{post.subtitle}</h2>
-                </div>
+              <header className="max-w-3xl mx-auto mb-20">
                 {/* Article meta */}
-                <div className="md:flex md:items-center md:justify-between mt-5">
-                  {/* Author meta */}
-                  <div className="flex items-center justify-center" >
-                    <a href="#0">
-                      {/* <img className="rounded-full flex-shrink-0 mr-3" src={require('../images/news-author-01.jpg').default} width="32" height="32" alt="Author 04" /> */}
-                    </a>
-                    {/* author & date */}
-                    <div>
-                      <span className="text-gray-600 dark:text-gray-400">By </span>
-                      <a className="font-medium text-gray-800 dark:text-gray-300 hover:underline" href="#0">{post.author}</a>
-                      <span className="text-gray-600 dark:text-gray-400"> · <Date dateString={post.date} /></span>
-                    </div>
+                <div className="flex items-center mb-6">
+                  <div className="mx-auto">
+                    <span className="text-gray-600">In </span>
+                    <a className="font-medium hover:underline" href="#0">{post.category}</a>
+                    <span className="text-gray-600"> · <Date dateString={post.date} /></span>
                   </div>
-                  {/* categories & tags */}
-                  <div>
-                    <ul className="flex flex-wrap text-xs font-medium m-1 justify-center md:j">
-                      {/* category */}
-                      <li className="m-1">
-                        {/* NOTE: figure out how to show all categories, if more than 1; change the [0], above, to [] */}
-                        <span className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out uppercase cursor-pointer">{post.category}</span>{' '}
+                </div>
+
+                {/* Title */}
+                <h1 className="h1 text-center mb-4">{post.title}</h1>
+                <h2 className="mb-12 text-xl italic text-gray-500">{post.subtitle}</h2>
+                <Image
+                src={urlFor(post.mainImage).url()}
+                alt="{post.title}"
+                layout="responsive"
+                width={1440}
+                height={577}
+                className="object-cover h-full w-full"
+              />
+              </header>
+
+              {/* Article content */}
+              <div className="lg:flex lg:justify-between" data-sticky-container>
+
+                {/* Sidebar */}
+                {/* <aside className="relative hidden lg:block w-64 mr-20 flex-shrink-0">
+                  <div data-sticky data-margin-top="100" data-sticky-for="768" data-sticky-wrap>
+                    <h4 className="text-lg font-bold leading-snug tracking-tight my-4">Table of contents</h4>
+                    <ul className="font-medium -my-1">
+                      <li className="py-1">
+                        <a className="flex items-center hover:underline" href="#introduction">
+                          <svg className="w-4 h-4 fill-current text-gray-400 mr-3 flex-shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
+                          </svg>
+                          <span><PortableText blocks={post?.body} /></span>
+                        </a>
                       </li>
-                      {/* tag */}
-                      <li className="m-1">
-                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out cursor-pointer" href="#">
-                          {post.tag}
-                        </span>
+                      <li className="py-1">
+                        <a className="flex items-center hover:underline" href="#general">
+                          <svg className="w-4 h-4 fill-current text-gray-400 mr-3 flex-shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
+                          </svg>
+                          <span>General content</span>
+                        </a>
                       </li>
-                      {/* estimated time to read calculation */}
-                      <li className="m-1">
-                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm cursor-pointer">4 min read</span>
+                      <li className="py-1">
+                        <a className="flex items-center hover:underline" href="#additional">
+                          <svg className="w-4 h-4 fill-current text-gray-400 mr-3 flex-shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
+                          </svg>
+                          <span>Additional reading</span>
+                        </a>
+                      </li>
+                      <li className="py-1">
+                        <a className="flex items-center hover:underline" href="#conclusion">
+                          <svg className="w-4 h-4 fill-current text-gray-400 mr-3 flex-shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
+                          </svg>
+                          <span>Conclusion</span>
+                        </a>
                       </li>
                     </ul>
                   </div>
-                </div>
-                <div className="mt-16">
-                    <p className="text-lg">{post.excerpt}</p>
-                  </div>
-              </header>
-              <hr className="w-11/12 h-px mx-auto pt-px bg-gray-400 dark:bg-gray-500 border-0 mb-8" />
+                </aside> */}
 
-              {/* Article content */}
-              <div className="article-content text-lg text-gray-600 dark:text-gray-400" >
-                <p className="mb-8 mt-24">
-                  <PortableText blocks={post?.body} />
-                </p>
+                {/* Main content */}
+                <div>
+
+
+                  <hr className="w-1/2 h-px pt-px bg-gray-300 border-0 mb-6" />
+
+                  {/* Article body */}
+                  <div className="article-content text-lg" >
+                    <p className="mb-8 mt-24">
+                      <PortableText blocks={post?.body} />
+                    </p>
+                  </div>
+
+                </div>
+
               </div>
 
               {/* Article footer */}
-              <footer>
-                {/* Newsletter module */}
-                <div className="dark bg-gray-800 py-8 px-8 md:py-12 md:px-12 text-center text-gray-100" >
-                  <div className="text-xl font-medium mb-6">Sign up to our newsletter for more articles like this.</div>
-                  <form>
-                    <div className="relative flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-sm sm:px-4">
-                      <input type="email" className="form-input w-full px-4 py-2 mb-2 sm:mb-0 sm:mr-2" placeholder="Your email" aria-label="Your email" />
-                      <a className="btn-sm text-white bg-teal-500 hover:bg-teal-400 flex-shrink-0" href="#0">Subscribe</a>
-                      <svg className="hidden sm:block absolute left-full -mt-3" width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path className="fill-current text-gray-600" d="M6.226 39.073l9.71 2.172-.436 1.951-13.436-3.004-1.735-.388 1.232-1.281 9.545-9.923 1.441 1.387-6.898 7.171 7.737-2.329C25.946 29.254 34.831 17.909 40.043.71l1.914.58c-5.378 17.746-14.651 29.572-27.818 35.393l-.117.043-7.796 2.347z" />
-                      </svg>
-                    </div>
-                    {/* Success message */}
-                    {/* <p className="text-sm mt-2 opacity-80">Thanks for subscribing!</p> */}
-                    <p className="text-sm text-gray-400 italic mt-3">No spam. No ads. Only great content.</p>
-                  </form>
-                </div>
-              </footer>
-
             </article>
 
           </div>
@@ -139,7 +136,7 @@ export async function getStaticPaths() {
   );
   return {
     paths,
-    fallback: false
+    fallback: 'blocking',
   }
 }
 

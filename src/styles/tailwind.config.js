@@ -4,9 +4,13 @@ module.exports = {
     'src/**/*.js',
     'src/**/*.jsx',
   ],
+  darkMode: 'class', // or 'media' or 'class'
+  mode: 'jit',
   theme: {
     extend: {
       colors: {
+        magenta: '#d33682',
+        cyan: '#2aa198',
         gray: {
           100: '#FBFBFB',
           200: '#EAEAEA',
@@ -41,6 +45,11 @@ module.exports = {
           900: '#234E52',
         },
       },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+        mono: ['Fira Code', 'monospace'],
+      },
       boxShadow: {
         xs: '0 0 0 1px rgba(0, 0, 0, 0.16)',
         sm: '0 1px 2px 0 rgba(0, 0, 0, 0.16)',
@@ -57,9 +66,6 @@ module.exports = {
         '9/16': '56.25%',
         '3/4': '75%',
         '1/1': '100%',
-      },
-      fontFamily: {
-        inter: ['Inter', 'sans-serif']
       },
       fontSize: {
         xs: '0.75rem',
@@ -135,5 +141,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('nightwind'),
   ],
 };

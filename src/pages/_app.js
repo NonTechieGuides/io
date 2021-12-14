@@ -1,11 +1,11 @@
 import '../styles/style.scss'
 import Header from '../components/header'
 import Footer from '../components/footer'
-import { useEffect } from 'react'
+import { ThemeProvider } from 'next-themes'
+import React, { useState, useRef, useEffect } from 'react'
 import AOS from 'aos'
 import Sticky from 'sticky-js'
-import { useRouter } from 'next/router'
-
+// import { focusHandling } from 'cruip-js-toolkit'
 
 function MyApp({ Component, pageProps }) {
 
@@ -30,7 +30,11 @@ function MyApp({ Component, pageProps }) {
   // }, [location.pathname]); // triggered on route change
 
   return (
-    <>
+      <ThemeProvider
+        attribute='class'
+        storageKey='nightwind-mode'
+        defaultTheme='system'
+      >
         <div className="flex flex-col min-h-screen overflow-hidden mx-auto">
           <Header />
           <main className="flex-grow">
@@ -38,7 +42,7 @@ function MyApp({ Component, pageProps }) {
           </main>
           <Footer />
         </div>
-    </>
+      </ThemeProvider>
   )
 }
 

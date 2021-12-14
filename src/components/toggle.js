@@ -34,8 +34,8 @@ export default function Nightwind(props) {
         fill="currentColor"
         className={`${
           theme === 'dark'
-            ? 'text-blue-800 group-hover:text-yellow-400'
-            : 'text-yellow-200 group-hover:text-blue-200'
+            ? 'text-gray-800 group-hover:text-gray-400'
+            : 'text-gray-200 group-hover:text-gray-200'
         }`}
       />
     </svg>

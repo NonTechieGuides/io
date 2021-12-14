@@ -7,10 +7,12 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   mode: 'jit',
   theme: {
+    nightwind: {
+      typography: true,
+      colorClasses: ['gradient', 'ring', 'ring-offset', 'divide', 'placeholder', 'dark'],
+    },
     extend: {
       colors: {
-        magenta: '#d33682',
-        cyan: '#2aa198',
         gray: {
           100: '#FBFBFB',
           200: '#EAEAEA',
@@ -44,6 +46,9 @@ module.exports = {
           800: '#285E61',
           900: '#234E52',
         },
+        base02: {'#073642'},
+        magenta: '#d33682',
+        cyan: '#2aa198',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -133,11 +138,12 @@ module.exports = {
     },
   },
   variants: {
-    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    translate: ['responsive', 'hover', 'focus', 'group-hover'],
-    boxShadow: ['responsive', 'hover', 'focus', 'focus-within'],
-    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover', 'dark'],
+    textColor: ['responsive', 'hover', 'focus', 'group-hover', 'dark'],
+    translate: ['responsive', 'hover', 'focus', 'group-hover', 'dark'],
+    boxShadow: ['responsive', 'hover', 'focus', 'focus-within', 'dark'],
+    opacity: ['responsive', 'hover', 'focus', 'group-hover', 'dark'],
+    nightwind: ['group-hover', 'active', 'focus', 'dark'],
   },
   plugins: [
     require('@tailwindcss/forms'),

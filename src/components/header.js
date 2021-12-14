@@ -43,7 +43,7 @@ const Header = () => {
   }, [top]);
 
   return (
-    <header className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top && 'bg-white blur shadow-lg'}`}>
+    <header className="absolute w-full z-30">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
 
@@ -70,34 +70,35 @@ const Header = () => {
             {/* Desktop menu links */}
             <ul className="flex flex-grow justify-end flex-wrap items-center">
               <li>
-                <Link href="/"><a className="text-gray-600 dark:text-white hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Home</a></Link>
+                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Home</a></Link>
               </li>
               <li>
-                <Link href="/"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">About</a></Link>
+                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">About</a></Link>
               </li>
               <li>
-                <Link href="/blog"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Blog</a></Link>
+                <Link href="/blog"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Blog</a></Link>
               </li>
               <li>
-                <Link href="/faq"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">FAQ</a></Link>
+                <Link href="/faq"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">FAQ</a></Link>
               </li>
               <li>
-                <Link href="/"><a className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Contact</a></Link>
+                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Contact</a></Link>
               </li>
             </ul>
 
             {/* CTA & darkmode toggle */}
             <div className="flex flex-grow justify-end flex-wrap items-center">
-              <div className="text-gray-600 hover:text-gray-900 hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div>
-
+            <div className=" hover:underline px-3 md:pl-24 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div>
               <Link href="/get-the-book">
-                <a className="btn-sm text-gray-200 dark:text-green-400 bg-gray-900 dark:bg-red-600 hover:bg-gray-800 ml-3 py-2 px-4 rounded-lg uppercase font-bold focus:outline-none">Get the Book</a>
+                <a className="btn-sm text-white dark:text-black bg-black dark:bg-white ml-3 py-2 px-4 rounded-lg uppercase font-bold focus:outline-none">Get the Book</a>
               </Link>
             </div>
           </nav>
 
           {/* Mobile menu */}
           <div className="flex md:hidden">
+
+            <div className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div>
 
             {/* Hamburger button */}
             <button
@@ -108,7 +109,7 @@ const Header = () => {
               onClick={() => setMobileNavOpen(!mobileNavOpen)}
             >
               <span className="sr-only">Menu</span>
-              <svg className="w-6 h-6 fill-current text-gray-900" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-6 h-6 fill-current text-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <rect y="4" width="24" height="2" />
                 <rect y="11" width="24" height="2" />
                 <rect y="18" width="24" height="2" />
@@ -131,19 +132,19 @@ const Header = () => {
               >
                 <ul className="ml-8 px-5 py-2">
                   <li>
-                    <Link href="/"><a className="flex text-gray-600 hover:text-gray-900 my-4 py-2">Home</a></Link>
+                    <Link href="/"><a className="flex  hover:underline my-4 py-2">Home</a></Link>
                   </li>
                   <li>
-                    <Link href="/about"><a className="flex text-gray-600 hover:text-gray-900 my-4 py-2">About</a></Link>
+                    <Link href="/about"><a className="flex  hover:underline my-4 py-2">About</a></Link>
                   </li>
                   <li>
-                    <Link href="/blog"><a className="flex text-gray-600 hover:text-gray-900 my-4 py-2">Blog</a></Link>
+                    <Link href="/blog"><a className="flex  hover:underline my-4 py-2">Blog</a></Link>
                   </li>
                   <li>
-                    <Link href="/faq"><a className="flex text-gray-600 hover:text-gray-900 my-4 py-2">FAQ</a></Link>
+                    <Link href="/faq"><a className="flex  hover:underline my-4 py-2">FAQ</a></Link>
                   </li>
                   <li>
-                    <Link href="/contact"><a className="flex text-gray-600 hover:text-gray-900 mt-4 mb-8 py-2">Contact</a></Link>
+                    <Link href="/contact"><a className="flex  hover:underline mt-4 mb-8 py-2">Contact</a></Link>
                   </li>
 
                   <li>

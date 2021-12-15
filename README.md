@@ -1,6 +1,8 @@
 # NON-TECHIE GUIDES
 ## Git yur nErd on!
 
+*test* Will this commit??
+
 Think building websites using the Jamstack & coding React components or even just a little CSS or HTML is complicated and better left to professional web developers?
 
 Think you don't have the skills or understanding to build your own site on using modern, fast, secure, & Google-compliant approach?

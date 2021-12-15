@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react'
 import Transition from '../utils/Transition'
 import Dropdown from '../utils/Dropdown'
 import Link from 'next/link'
-import Toggle from './toggle'
 
 const Header = () => {
 
@@ -88,7 +87,7 @@ const Header = () => {
 
             {/* CTA & darkmode toggle */}
             <div className="flex flex-grow justify-end flex-wrap items-center">
-            <div className=" hover:underline px-3 md:pl-24 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div>
+            {/* <div className=" hover:underline px-3 md:pl-24 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div> */}
               <Link href="/get-the-book">
                 <a className="btn-sm text-white dark:text-black bg-black dark:bg-white ml-3 py-2 px-4 rounded-lg uppercase font-bold focus:outline-none">Get the Book</a>
               </Link>
@@ -98,7 +97,7 @@ const Header = () => {
           {/* Mobile menu */}
           <div className="flex md:hidden">
 
-            <div className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div>
+            {/* <div className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div> */}
 
             {/* Hamburger button */}
             <button

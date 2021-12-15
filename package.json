@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@craco/craco": "^6.3.0",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^2.21.10",
     "@sanity/image-url": "^1.0.1",
@@ -20,16 +21,13 @@
     "groq": "^2.15.0",
     "next": "^12.0.7",
     "next-sanity": "^0.4.0",
-    "next-themes": "^0.0.15",
-    "nightwind": "^1.1.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.19.5",
     "react-query": "^3.33.1",
     "react-transition-group": "^4.4.2",
     "sass": "^1.44.0",
-    "stick-js": "^0.4.8",
-    "@craco/craco": "^6.3.0"
+    "stick-js": "^0.4.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",

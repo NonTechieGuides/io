@@ -29,7 +29,7 @@ export default function Home({ posts, cats }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="relative">
+      <section className="relative bg-base02">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="pt-32 pb-12 md:pt-40 md:pb-20">
 

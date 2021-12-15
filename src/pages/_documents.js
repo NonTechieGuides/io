@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html className="nightwind">
+      <Html>
         <Head>
           <link
             href="https://fonts.googleapis.com/css2?family=Fira+Code&display=optional"

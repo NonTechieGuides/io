@@ -18,9 +18,14 @@ const postQuery = `*[_type == "post" && slug.current == $slug][0]{
   excerpt,
 }`
 
+const h2sQuery = `*[_type == "post"]{
+  _key,
+  "h2s": body[style == "h2"].children[0].text
+}`
+
 export default function SinglePost({ data }) {
 
-  const { post } = data;
+  const { post, h2s } = data;
 
   return (
     <section>
@@ -57,50 +62,27 @@ export default function SinglePost({ data }) {
               {/* Article content */}
               <div className="lg:flex lg:justify-between" data-sticky-container>
 
-                {/* Sidebar */}
+                {/* Sidebar
                 <aside className="relative hidden lg:block w-64 mr-20 flex-shrink-0">
                   <div data-sticky data-margin-top="100" data-sticky-for="768" data-sticky-wrap>
                     <h4 className="text-lg font-bold leading-snug tracking-tight my-4">Table of contents</h4>
                     <ul className="font-medium -my-1">
-                      <li className="py-1">
-                        <a className="flex items-center hover:underline" href="#introduction">
+                      {h2s?.length > 0 && h2s.map((h2) => (
+                        <li key={h2._key} className="py-1">
+                          <a className="flex items-center hover:underline" href="#">
                           <svg className="w-4 h-4 fill-current text-gray-400 mr-3 flex-shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
                           </svg>
-                          <span>Introduction</span>
-                          {/* <span><PortableText blocks={post?.body} /></span> */}
-                        </a>
-                      </li>
-                      <li className="py-1">
-                        <a className="flex items-center hover:underline" href="#general">
-                          <svg className="w-4 h-4 fill-current text-gray-400 mr-3 flex-shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
-                          </svg>
-                          <span>General content</span>
-                        </a>
-                      </li>
-                      <li className="py-1">
-                        <a className="flex items-center hover:underline" href="#additional">
-                          <svg className="w-4 h-4 fill-current text-gray-400 mr-3 flex-shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
-                          </svg>
-                          <span>Additional reading</span>
-                        </a>
-                      </li>
-                      <li className="py-1">
-                        <a className="flex items-center hover:underline" href="#conclusion">
-                          <svg className="w-4 h-4 fill-current text-gray-400 mr-3 flex-shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
-                          </svg>
-                          <span>Conclusion</span>
-                        </a>
-                      </li>
+                          <span>1. {h2.text}</span>
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </div>
-                </aside>
+                </aside> */}
 
                 {/* Main content */}
-                <div>
+                <div className="max-w-prose mx-auto"> {/* remove max-w-prose mx-auto when sidebar is added back */}
 
 
                   <hr className="w-1/2 h-px pt-px bg-gray-300 border-0 mb-6" />
@@ -143,10 +125,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const post = await sanityClient.fetch(postQuery, { slug })
+  const post = await sanityClient.fetch(postQuery, { slug });
+  const h2s = await sanityClient.fetch(h2sQuery);
   return {
     props: {
-      data: { post }
+      data: {
+        post,
+        h2s,
+      }
     }
   };
 }

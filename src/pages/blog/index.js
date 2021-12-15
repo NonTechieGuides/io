@@ -35,19 +35,19 @@ export default function Home({ posts, cats }) {
 
             {/* Page header */}
             <div className="max-w-4xl pb-12 md:pb-20 text-center md:text-left">
-              <h1 className="text-4xl font-bold uppercase text-green dark:text-magenta">Tips &amp; tutorials for non-techies:</h1>
-              <h2 className="text-xl font-semibold italic text-gray-400">everything you need to know to build fast, compliant, secure websites using the JamStack!</h2>
+              <h1 className="text-4xl font-bold uppercase text-yellow">Tips &amp; tutorials for non-techies:</h1>
+              <h2 className="text-xl font-semibold italic text-green">everything you need to know to build fast, compliant, secure websites using the JamStack!</h2>
             </div>
 
             {/* Section tags ... utilizing CATEGORIES; HOW TO SORT BY CATEGORY WHEN CLICKED???? */}
             <div className="border-b border-gray-300 pb-4 mb-12">
               <ul className="flex flex-wrap justify-center md:justify-start font-medium -mx-5 -my-1">
                 <li className="mx-5 my-1">
-                  <a className="text-blue-600 hover:text-gray-100 py-1 px-3 rounded-full hover:bg-blue-600 transition duration-150 ease-in-out focus:outline-none cursor-pointer" href="#0">All</a>
+                  <a className="text-cyan hover:text-yellow py-1 px-3 rounded-full hover:bg-cyan transition duration-150 ease-in-out focus:outline-none cursor-pointer" href="#0">All</a>
                 </li>
                 {cats?.length > 0 && cats.map((category) => (
                   <li key={category._id} className="mx-5 my-1">
-                    <a className="text-gray-800 hover:text-gray-100 py-1 px-3 rounded-full hover:bg-blue-600 transition duration-150 ease-in-out focus:outline-none cursor-pointer" href="#0">{category.title}</a>
+                    <a className="text-orange hover:text-bold hover:underline py-1 px-3 rounded-full hover:bg-blue-600 transition duration-150 ease-in-out focus:outline-none cursor-pointer" href="#0">{category.title}</a>
                   </li>
                 ))}
               </ul>
@@ -82,17 +82,17 @@ export default function Home({ posts, cats }) {
                             {/* category */}
                             <li className="m-1">
                               {/* NOTE: figure out how to show all categories, if more than 1; change the [0], above, to [] */}
-                              <span className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out uppercase cursor-pointer">{post.category}</span>{' '}
+                              <span className="inline-flex text-center text-base2 bg-orange py-1 px-3 rounded-full bg-blue hover:bg-blue-600 transition duration-150 ease-in-out uppercase cursor-pointer">{post.category}</span>{' '}
                             </li>
                             {/* tag */}
                             <li className="m-1">
-                              <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out cursor-pointer" href="#">
+                              <span className="inline-flex text-center text-base2 py-1 px-3 rounded-full bg-cyan hover:bg-blue-200 transition duration-150 ease-in-out cursor-pointer" href="#">
                                 {post.tag}
                               </span>
                             </li>
                             {/* estimated time to read calculation */}
                             <li className="m-1">
-                              <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm cursor-pointer">4 min read</span>
+                              <span className="inline-flex text-center text-base03 py-1 px-3 rounded-full bg-white shadow-sm cursor-pointer">4 min read</span>
                             </li>
                           </ul>
                         </div>
@@ -104,7 +104,7 @@ export default function Home({ posts, cats }) {
                       <main className="text-sm flex items-center mt-4">
                         <div className="flex flex-shrink-0 mr-3">
                           <a className="relative" href="#0">
-                            <span className="absolute inset-0 -m-px" aria-hidden="true"><span className="absolute inset-0 -m-px bg-white rounded-full"></span></span>
+                            <span className="absolute inset-0 -m-px" aria-hidden="true"><span className="absolute inset-0 -m-px bg-base2 rounded-full"></span></span>
                             <Image
                               src={urlFor(post.authorImage).url()}
                               alt="{post.author}"
@@ -118,13 +118,13 @@ export default function Home({ posts, cats }) {
                           </a>
                         </div>
                         <div>
-                          <span className="text-gray-600">By </span>
+                          <span className="text-basee2">By </span>
                           <span className="font-medium hover:underline">{post.author}</span>
                         </div>
                       </main>
                       <footer>
                         {/* blog excerpt */}
-                        <p className="text-gray-600 flex-grow text-justify md:text-left md:w-4/5 mt-3">{post.excerpt}</p>
+                        <p className="text-base3 flex-grow text-justify md:text-left md:w-4/5 mt-3">{post.excerpt}</p>
 
                       </footer>
                     </article>

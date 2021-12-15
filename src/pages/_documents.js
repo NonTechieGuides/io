@@ -19,7 +19,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="bg-base02 dark:bg-base2 text-base2 dark:text-base02">
+        <body>
           <Main />
           <NextScript />
         </body>

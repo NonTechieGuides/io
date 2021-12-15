@@ -1,15 +1,33 @@
 // my custom styles
 @layer base {
   body {
-    @apply font-mono;
+    @apply font-mono bg-base3 dark:bg-base02;
   }
 
   p {
-    // @apply text-base2;
+    @apply text-base02 dark:text-base2;
   }
+  
 
   .article-content {
-    // what I want to do is style the 1st paragraph & 1st line of the 1st paragraph: probably a slightly bigger font size and probably bold or something ... but only the 1st line (bold, etc.). The whole paragraph would also stand out. Not sure how to do this with the Portable Text import, other than making sure to style it in Sanity Studio. I'd prefer to do it via CSS. But we'll see what I can manage to figure out.
+    h2 {
+      @apply text-2xl text-orange mt-6 mb-8;
+    }
+    div > p:first-of-type::first-line {
+      @apply text-base3 font-black uppercase;
+    }
+    a {
+      @apply underline text-blue-300;
+    }
+    figure {
+      @apply my-12;
+    }
+    strong {
+      @apply text-green;
+    }
+    em {
+      @apply text-cyan;
+    }
   }
 
   blockquote {

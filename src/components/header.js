@@ -69,19 +69,19 @@ const Header = () => {
             {/* Desktop menu links */}
             <ul className="flex flex-grow justify-end flex-wrap items-center">
               <li>
-                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-violet dark:text-base2">Home</a></Link>
+                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-magenta">Home</a></Link>
               </li>
               <li>
-                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">About</a></Link>
+                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-magenta">About</a></Link>
               </li>
               <li>
-                <Link href="/blog"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Blog</a></Link>
+                <Link href="/blog"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-magenta">Blog</a></Link>
               </li>
               <li>
-                <Link href="/faq"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">FAQ</a></Link>
+                <Link href="/faq"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-magenta">FAQ</a></Link>
               </li>
               <li>
-                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Contact</a></Link>
+                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-magenta">Contact</a></Link>
               </li>
             </ul>
 
@@ -89,7 +89,7 @@ const Header = () => {
             <div className="flex flex-grow justify-end flex-wrap items-center">
             {/* <div className=" hover:underline px-3 md:pl-24 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div> */}
               <Link href="/get-the-book">
-                <a className="btn-sm text-white dark:text-black bg-black dark:bg-white ml-3 py-2 px-4 rounded-lg uppercase font-bold focus:outline-none">Get the Book</a>
+                <a className="btn-sm ml-3 py-2 px-4 rounded-lg uppercase font-bold focus:outline-none bg-green text-base3">Get the Book</a>
               </Link>
             </div>
           </nav>

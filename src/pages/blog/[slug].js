@@ -40,15 +40,15 @@ export default function SinglePost({ data }) {
                 {/* Article meta */}
                 <div className="flex items-center mb-6">
                   <div className="mx-auto">
-                    <span className="text-gray-600">In </span>
-                    <a className="font-medium hover:underline" href="#0">{post.category}</a>
-                    <span className="text-gray-600"> · <Date dateString={post.date} /></span>
+                    <span className="text-violet">In </span>
+                    <a className="font-black hover:underline text-orange" href="#0">{post.category}</a>
+                    <span className="text-yellow"> · <Date dateString={post.date} /></span>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h1 className="h1 text-center mb-4">{post.title}</h1>
-                <h2 className="mb-12 text-xl italic text-gray-500">{post.subtitle}</h2>
+                <h1 className="h1 text-center mb-4 text-cyan">{post.title}</h1>
+                <h2 className="mb-12 text-xl italic text-green">{post.subtitle}</h2>
                 <Image
                 src={urlFor(post.mainImage).url()}
                 alt="{post.title}"

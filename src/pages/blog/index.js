@@ -29,13 +29,13 @@ export default function Home({ posts, cats }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="relative bg-base02">
+      <section className="relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="pt-32 pb-12 md:pt-40 md:pb-20">
 
             {/* Page header */}
             <div className="max-w-4xl pb-12 md:pb-20 text-center md:text-left">
-              <h1 className="text-4xl font-bold uppercase text-blue-200 dark:text-red-500">Tips &amp; tutorials for non-techies:</h1>
+              <h1 className="text-4xl font-bold uppercase text-green dark:text-magenta">Tips &amp; tutorials for non-techies:</h1>
               <h2 className="text-xl font-semibold italic text-gray-400">everything you need to know to build fast, compliant, secure websites using the JamStack!</h2>
             </div>
 

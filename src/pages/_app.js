@@ -2,6 +2,7 @@ import '../styles/style.scss'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import React, { useState, useRef, useEffect } from 'react'
+import { ThemeProvider } from 'next-themes'
 import AOS from 'aos'
 import Sticky from 'sticky-js'
 // import { focusHandling } from 'cruip-js-toolkit'
@@ -29,13 +30,18 @@ function MyApp({ Component, pageProps }) {
   // }, [location.pathname]); // triggered on route change
 
   return (
-        <div className="flex flex-col min-h-screen overflow-hidden mx-auto">
-          <Header />
-          <main className="flex-grow">
-            <Component {...pageProps} />
-          </main>
-          <Footer />
-        </div>
+    <ThemeProvider
+    attribute='class'
+    defaultTheme='system'
+    >
+      <div className="flex flex-col min-h-screen overflow-hidden mx-auto">
+        <Header />
+        <main className="flex-grow">
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 

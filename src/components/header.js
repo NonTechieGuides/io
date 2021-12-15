@@ -69,7 +69,7 @@ const Header = () => {
             {/* Desktop menu links */}
             <ul className="flex flex-grow justify-end flex-wrap items-center">
               <li>
-                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">Home</a></Link>
+                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-violet dark:text-base2">Home</a></Link>
               </li>
               <li>
                 <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none">About</a></Link>

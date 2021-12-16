@@ -1,7 +1,7 @@
 // my custom styles
 @layer base {
   body {
-    @apply font-mono bg-base3 dark:bg-base02;
+    @apply font-mono bg-gravel-lite bg-base3 dark:bg-base02;
   }
 
   p {
@@ -11,16 +11,28 @@
 
   .article-content {
     h2 {
-      @apply text-2xl text-orange mt-6 mb-8;
+      @apply text-2xl text-orange mt-6 mb-8 normal-case;
     }
-    div > p:first-of-type::first-line {
-      @apply text-base3 font-black uppercase;
+    h2:first-of-type {
+      @apply text-base3 dark:text-base02 -mt-20;
+    }
+    h2 + p:first-of-type::first-line {
+      @apply text-xl dark:text-base3 font-bold uppercase;
+    }
+    h2 + p:first-of-type {
+      @apply text-xl mb-12 text-justify block md:-mx-16 pb-8 border-b border-base2;
     }
     a {
       @apply underline text-blue-300;
     }
     figure {
       @apply my-12;
+    }
+    ul {
+      @apply list-disc list-outside ml-4 md:mx-4;
+      li {
+        @apply mb-4;
+      }
     }
     strong {
       @apply text-green;
@@ -33,7 +45,10 @@
   blockquote {
     @apply text-xl text-gray-400 mx-6 md:-ml-12 my-12 p-4 uppercase italic border-l-4 border-gray-400 bg-gradient-to-r from-gray-200 to-white;
   }
-
+  
+  nav > ul {
+    @apply list-none;
+  }
   ol {
     @apply list-decimal list-outside ml-8 md:ml-0;
   }

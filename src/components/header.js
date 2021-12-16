@@ -44,7 +44,7 @@ const Header = () => {
   return (
     <header className="absolute w-full z-30">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-20 border-b border-violet">
 
           {/* Site branding */}
           <div className="flex-shrink-0 mr-4">
@@ -64,24 +64,24 @@ const Header = () => {
           </div>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex md:flex-grow">
+          <nav className="hidden md:flex md:flex-grow justify-items-center">
 
             {/* Desktop menu links */}
-            <ul className="flex flex-grow justify-end flex-wrap items-center">
+            <ul className="flex flex-grow justify-end flex-wrap mt-2">
               <li>
-                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-magenta">Home</a></Link>
+                <Link href="/"><a className="hover:underline px-3 lg:px-5 flex items-center transtion duration-150 ease-in-out focus:outline-none text-yellow">Home</a></Link>
               </li>
               <li>
-                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-magenta">About</a></Link>
+                <Link href="/"><a className="hover:underline px-3 lg:px-5 flex items-center transtion duration-150 ease-in-out focus:outline-none text-yellow">About</a></Link>
               </li>
               <li>
-                <Link href="/blog"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-magenta">Blog</a></Link>
+                <Link href="/blog"><a className="hover:underline px-3 lg:px-5 flex items-center transtion duration-150 ease-in-out focus:outline-none text-yellow">Blog</a></Link>
               </li>
               <li>
-                <Link href="/faq"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-magenta">FAQ</a></Link>
+                <Link href="/faq"><a className="hover:underline px-3 lg:px-5 flex items-center transtion duration-150 ease-in-out focus:outline-none text-yellow">FAQ</a></Link>
               </li>
               <li>
-                <Link href="/"><a className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none text-magenta">Contact</a></Link>
+                <Link href="/"><a className="hover:underline px-3 lg:px-5 flex items-center transtion duration-150 ease-in-out focus:outline-none text-yellow">Contact</a></Link>
               </li>
             </ul>
 
@@ -89,7 +89,7 @@ const Header = () => {
             <div className="flex flex-grow justify-end flex-wrap items-center">
             {/* <div className=" hover:underline px-3 md:pl-24 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div> */}
               <Link href="/get-the-book">
-                <a className="btn-sm ml-3 py-2 px-4 rounded-lg uppercase font-bold focus:outline-none bg-green text-base3">Get the Book</a>
+                <a className="btn-sm ml-3 py-2 px-4 rounded-lg uppercase focus:outline-none bg-yellow text-base3">Get the Book</a>
               </Link>
             </div>
           </nav>
@@ -97,7 +97,7 @@ const Header = () => {
           {/* Mobile menu */}
           <div className="flex md:hidden">
 
-            {/* <div className=" hover:underline px-3 lg:px-5 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div> */}
+            {/* <div className=" hover:underline px-3 lg:px-5 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div> */}
 
             {/* Hamburger button */}
             <button

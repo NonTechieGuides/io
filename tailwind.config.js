@@ -67,7 +67,9 @@ module.exports = {
         '1/1': '100%',
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif']
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+        mono: ['Fira Code', 'monospace'],
       },
       fontSize: {
         xs: '0.75rem',
@@ -166,6 +168,10 @@ module.exports = {
           },
         },
       }),
+      backgroundImage: {
+        'codewall': "url('/assets/x.png')",
+        'gravel-lite': "url('/assets/gravel-lite.png')",
+       }
     },
   },
   variants: {
@@ -174,10 +180,11 @@ module.exports = {
     translate: ['responsive', 'hover', 'focus', 'group-hover'],
     boxShadow: ['responsive', 'hover', 'focus', 'focus-within'],
     opacity: ['responsive', 'hover', 'focus', 'group-hover'],
-    backgroundColor: ['dark'],
-    textColor: ['dark'],
+    backgroundColor: ['dark', 'hover'],
+    textColor: ['dark', 'hover'],
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography',)
   ],
 };

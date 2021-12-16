@@ -36,10 +36,10 @@ export default function SinglePost({ data }) {
             <article>
 
               {/* Article header */}
-              <header className="max-w-3xl mx-auto mb-20">
+              <header className="max-w-3xl mx-auto mb-10">
                 {/* Article meta */}
                 <div className="flex items-center mb-6">
-                  <div className="mx-auto">
+                  <div className="mx-auto border-t border-violet border-b">
                     <span className="text-violet">In </span>
                     <a className="font-black hover:underline text-orange" href="#0">{post.category}</a>
                     <span className="text-yellow"> · <Date dateString={post.date} /></span>
@@ -48,7 +48,7 @@ export default function SinglePost({ data }) {
 
                 {/* Title */}
                 <h1 className="h1 text-center mb-4 text-cyan">{post.title}</h1>
-                <h2 className="mb-12 text-xl italic text-green">{post.subtitle}</h2>
+                <h2 className="mb-12 text-xl text-center w-4/6 mx-auto italic text-green">{post.subtitle}</h2>
                 <Image
                 src={urlFor(post.mainImage).url()}
                 alt="{post.title}"
@@ -60,7 +60,7 @@ export default function SinglePost({ data }) {
               </header>
 
               {/* Article content */}
-              <div className="lg:flex lg:justify-between" data-sticky-container>
+              <div className="article-content lg:flex lg:justify-between" data-sticky-container>
 
                 {/* Sidebar
                 <aside className="relative hidden lg:block w-64 mr-20 flex-shrink-0">
@@ -88,7 +88,7 @@ export default function SinglePost({ data }) {
                   <hr className="w-1/2 h-px pt-px bg-gray-300 border-0 mb-6" />
 
                   {/* Article body */}
-                  <div className="article-content text-lg" >
+                  <div className="text-lg" >
                     <p className="mb-8 mt-24">
                       <PortableText blocks={post?.body} />
                     </p>

@@ -89,7 +89,7 @@ const Header = () => {
             <div className="flex flex-grow justify-end flex-wrap items-center">
             {/* <div className=" hover:underline px-3 md:pl-24 py-2 flex items-center transtion duration-150 ease-in-out focus:outline-none"><Toggle /></div> */}
               <Link href="/get-the-book">
-                <a className="btn-sm ml-3 py-2 px-4 rounded-lg uppercase focus:outline-none bg-yellow text-base3">Get the Book</a>
+                <a className="btn-sm ml-3 py-2 px-4 rounded-lg uppercase focus:outline-none bg-yellow text-base3">Pre-order the Book</a>
               </Link>
             </div>
           </nav>
@@ -148,7 +148,7 @@ const Header = () => {
 
                   <li>
                     <Link href="/get-the-book"><a className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full py-2 px-4 rounded-md uppercase">
-                      Get the Book</a>
+                      Pre-order the Book</a>
                     </Link>
                   </li>
                 </ul>
